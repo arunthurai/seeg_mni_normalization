@@ -1,0 +1,23 @@
+{
+    "Name": "seeg_mni_normalization - BIDs app to transform SEEG contact locations to desired template",
+    "BIDSVersion": "1.4.0",
+    "DatasetType": "derivative",
+    "PipelineDescription":
+        {
+            "Name": "seeg_mni_normalization",
+            "Version": "0.1.0",
+            "CodeURL": "http://github.com/arunthurai/seeg_mni_normalization",
+            "Author": "Arun Thurairajah",
+            "AuthorEmail": "a.thurairajah1@gmail.com"
+        },
+    "GeneratedBy": [
+        {
+            "Name": "seeg_mni_normalization",
+            "Version": "0.1.0",
+            "CodeURL": "http://github.com/arunthurai/seeg_mni_normalization",
+            "Author": "Arun Thurairajah",
+            "AuthorEmail": "a.thurairajah1@gmail.com"
+ 
+        }
+    ]
+}
