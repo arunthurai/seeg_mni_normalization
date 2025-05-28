@@ -24,20 +24,41 @@ targets_by_analysis_level:
 pybids_inputs:
   base_T1w:
     filters:
+      session: 'pre'
       suffix: 'T1w'
       extension: '.nii.gz'
       datatype: 'anat'
       run: '02'
     wildcards:
       - subject
-  seeg_contact_locations:
+  seeg_contacts:
     filters:
       suffix: 'SEEGA'
       extension: '.fcsv'
-      datatype: 'anat'
+      # datatype: 'anat'
+      # session: 'pre'
     wildcards:
       - subject
-    custom_path: '/home/greydon/Documents/data/SEEG/derivatives/seeg_coordinates/sub-P{subject}/sub-P{subject}_space-native_SEEGA.fcsv'
+    custom_path: '/home/greydon/Documents/data/fcsv_files/sub-{subject}/sub-{subject}_SEEGA.fcsv'
+  seeg_actual:
+    filters:
+      suffix: 'actual'
+      extension: '.fcsv'
+      # datatype: 'anat'
+      # session: 'pre'
+    wildcards:
+      - subject
+    custom_path: '/home/greydon/Documents/data/fcsv_files/sub-{subject}/sub-{subject}_actual.fcsv'
+  seeg_planned:
+    filters:
+      suffix: 'planned'
+      extension: '.fcsv'
+      # datatype: 'anat'
+      # session: 'pre'
+    wildcards:
+      - subject
+    custom_path: '/home/greydon/Documents/data/fcsv_files/sub-{subject}/sub-{subject}_planned.fcsv'
+
 
 #this configures the options to save the BIDSLayout
 # by default, database is not saved (uncomment to save)
@@ -103,6 +124,16 @@ parse_args:
   #     nargs: '+'
   #     type: string
   #     required: False
+  --greedy:
+    help: Specifies to use greedy for deformable registration
+    action: 'store_true'
+    required: False
+    default: False
+  --ants:
+    help: Specifies to use ANTs for deformable registration
+    action: 'store_true'
+    required: False
+    default: False
 
 #--- workflow specific configuration -- below is just an example:
 template: MNI152NLin2009aAsym

@@ -1,3 +1,4 @@
+#from Mau's previous work see https://github.com/mcespedes99/MNI_Registration
 
 rule synthstrip_T1w:
     input:

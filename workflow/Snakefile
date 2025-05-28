@@ -36,13 +36,15 @@ wildcard_constraints:
 
 include: "rules/preproc_T1w.smk"
 include: "rules/normalize_T1w.smk"
-#include: "rules/normalize_contacts.smk"
+include: "rules/normalize_contacts.smk"
 
 rule all:
     input:
         expand(
             expand(
-                rules.greedy_t1_to_template.output.affine_xfm_ras,
+                #rules.ants_T1_template.output.warped_flo,
+                #rules.greedy_t1_to_template.output.warp
+                rules.transform_contacts.output.affine_planned,
                 allow_missing=True,
             ),
             zip,
